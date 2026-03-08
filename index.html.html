@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kad Raya Nur</title>
+
+<style>
+body{
+font-family: 'Poppins', sans-serif;
+text-align:center;
+background:linear-gradient(135deg,#0f5132,#198754);
+color:white;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.container{
+background:white;
+color:#0f5132;
+padding:30px;
+border-radius:20px;
+width:320px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+input{
+padding:10px;
+width:80%;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+button{
+margin-top:10px;
+padding:10px 20px;
+border:none;
+border-radius:10px;
+background:#ffc107;
+font-size:16px;
+cursor:pointer;
+}
+
+.card{
+display:none;
+margin-top:20px;
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{opacity:0}
+to{opacity:1}
+}
+
+h1{
+color:#198754;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🌙 Kad Raya</h2>
+<p>Masukkan nama anda</p>
+
+<input type="text" id="name" placeholder="Nama anda">
+<br>
+<button onclick="showCard()">Buka Kad Raya</button>
+
+<div class="card" id="card">
+
+<h1>Selamat Hari Raya</h1>
+
+<p>Maaf Zahir & Batin</p>
+
+<p>Ikhlas daripada</p>
+
+<h2 id="username"></h2>
+
+</div>
+
+</div>
+
+<audio autoplay loop>
+<source src="https://files.catbox.moe/8b2l6o.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function showCard(){
+let name=document.getElementById("name").value;
+
+if(name==""){
+alert("Sila masukkan nama dulu 😊");
+return;
+}
+
+document.getElementById("username").innerText=name;
+
+document.getElementById("card").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
