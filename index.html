@@ -69,7 +69,7 @@ color:#198754;
 
 <input type="text" id="name" placeholder="Nama anda">
 <br>
-<button onclick="showCard()">Buka Kad Raya</button>
+<button onclick="showCard(); playSong()">Buka Kad Raya</button>
 
 <div class="card" id="card">
 
@@ -105,6 +105,16 @@ document.getElementById("card").style.display="block";
 
 }
 
+</script>
+
+<audio id="rayaSong" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8c6e7f9f3b.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playSong(){
+document.getElementById("rayaSong").play();
+}
 </script>
 
 </body>
