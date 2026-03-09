@@ -77,7 +77,7 @@ color:#198754;
 
 <p>Maaf Zahir & Batin</p>
 
-<p>Ikhlas daripada</p>
+<p>Ikhlas daripada Erma</p>
 
 <h2 id="username"></h2>
 
@@ -85,8 +85,8 @@ color:#198754;
 
 </div>
 
-<audio autoplay loop>
-<source src="https://files.catbox.moe/8b2l6o.mp3" type="audio/mpeg">
+<audio id="rayaSong" loop>
+  <source src="Siti_Nurhaliza_-_Sesuci_Lebaran_Official_Music_Video_256KBPS.webm" type="audio/webm">
 </audio>
 
 <script>
@@ -94,21 +94,16 @@ color:#198754;
 function showCard(){
 let name=document.getElementById("name").value;
 
-if(name==""){
-alert("Sila masukkan nama dulu 😊");
-return;
-}
-
 document.getElementById("username").innerText=name;
-
 document.getElementById("card").style.display="block";
 
+document.getElementById("rayaSong").play();
 }
 
 </script>
 
 <audio id="rayaSong" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8c6e7f9f3b.mp3" type="audio/mpeg">
+  <source src="Siti_Nurhaliza_-_Sesuci_Lebaran_Official_Music_Video_256KBPS.webm" type="audio/webm">
 </audio>
 
 <script>
