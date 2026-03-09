@@ -105,8 +105,11 @@ box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
 .card{
-display:none;
+position:relative;
 margin-top:20px;
+transform:translateX(-350px);
+opacity:0;
+transition:all 0.8s ease;
 }
 
 button{
@@ -167,6 +170,12 @@ border:1px solid #ccc;
 
 <h2 id="username"></h2>
 
+<p>✨ Semoga Aidilfitri membawa kebahagiaan</p>
+
+<p>🌙 Mohon maaf jika ada salah silap</p>
+
+<p>🎉 Selamat menyambut Hari Raya!</p>
+
 </div>
 
 </div>
@@ -183,7 +192,9 @@ let name=document.getElementById("name").value;
 
 document.getElementById("username").innerText=name;
 
-document.getElementById("card").style.display="block";
+let card=document.getElementById("card");
+card.style.transform="translateX(0)";
+card.style.opacity="1";
 
 document.getElementById("rayaSong").play();
 
