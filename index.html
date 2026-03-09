@@ -1,15 +1,15 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kad Raya Nur</title>
+<title>Kad Raya</title>
 
 <style>
+
 body{
-font-family: 'Poppins', sans-serif;
+font-family: Arial, sans-serif;
 text-align:center;
-background-image:url("https://images.unsplash.com/photo-1591608514075-3e7b9c7cde2c");
-background-size:cover;
-background-position:center;
+background:linear-gradient(#0f5132,#14532d);
 color:white;
 height:100vh;
 display:flex;
@@ -18,53 +18,20 @@ align-items:center;
 flex-direction:column;
 overflow:hidden;
 }
-.container{
-background:white;
-color:#0f5132;
-padding:30px;
-border-radius:20px;
-width:320px;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
+
+/* Moon */
+.moon{
+position:absolute;
+top:60px;
+right:80px;
+width:120px;
+height:120px;
+background:radial-gradient(circle,#fffacd,#ffd700);
+border-radius:50%;
+box-shadow:0 0 40px #fffacd,0 0 80px #ffd700;
 }
 
-<img class="lantern" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" style="left:10%; animation-delay:0s;">
-<img class="lantern" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" style="left:30%; animation-delay:2s;">
-<img class="lantern" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" style="left:50%; animation-delay:4s;">
-<img class="lantern" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" style="left:70%; animation-delay:1s;">
-<img class="lantern" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" style="left:90%; animation-delay:3s;">
-
-input{
-padding:10px;
-width:80%;
-border-radius:10px;
-border:1px solid #ccc;
-}
-
-button{
-margin-top:10px;
-padding:10px 20px;
-border:none;
-border-radius:10px;
-background:#ffc107;
-font-size:16px;
-cursor:pointer;
-}
-
-.card{
-display:none;
-margin-top:20px;
-animation:fade 1s;
-}
-
-@keyframes fade{
-from{opacity:0}
-to{opacity:1}
-}
-
-h1{
-color:#198754;
-}
-
+/* Lantern */
 .lantern{
 position:absolute;
 top:-100px;
@@ -85,28 +52,117 @@ transform:translateY(110vh) rotate(360deg);
 opacity:0;
 }
 }
+
+/* Ketupat */
+.ketupat{
+position:absolute;
+top:-100px;
+width:40px;
+animation:fall 10s linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+}
+
+/* Sparkles */
+.sparkles{
+position:absolute;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(2px 2px at 20% 30%, gold, transparent),
+radial-gradient(2px 2px at 40% 70%, gold, transparent),
+radial-gradient(2px 2px at 60% 40%, gold, transparent),
+radial-gradient(2px 2px at 80% 80%, gold, transparent);
+animation:twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:0.3;}
+to{opacity:1;}
+}
+
+/* Card */
+.container{
+background:white;
+color:#0f5132;
+padding:30px;
+border-radius:20px;
+width:300px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.card{
+display:none;
+margin-top:20px;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:10px;
+background:#ffc107;
+cursor:pointer;
+}
+
+input{
+padding:8px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
 </style>
 
 </head>
 
 <body>
 
+<div class="moon"></div>
+
+<div class="sparkles"></div>
+
+<!-- Lanterns -->
+<img class="lantern" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" style="left:10%; animation-delay:0s;">
+<img class="lantern" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" style="left:30%; animation-delay:2s;">
+<img class="lantern" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" style="left:50%; animation-delay:4s;">
+<img class="lantern" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" style="left:70%; animation-delay:1s;">
+<img class="lantern" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" style="left:90%; animation-delay:3s;">
+
+<!-- Ketupat -->
+<img class="ketupat" src="https://cdn-icons-png.flaticon.com/512/706/706164.png" style="left:15%; animation-delay:0s;">
+<img class="ketupat" src="https://cdn-icons-png.flaticon.com/512/706/706164.png" style="left:35%; animation-delay:2s;">
+<img class="ketupat" src="https://cdn-icons-png.flaticon.com/512/706/706164.png" style="left:55%; animation-delay:4s;">
+<img class="ketupat" src="https://cdn-icons-png.flaticon.com/512/706/706164.png" style="left:75%; animation-delay:1s;">
+<img class="ketupat" src="https://cdn-icons-png.flaticon.com/512/706/706164.png" style="left:90%; animation-delay:3s;">
+
 <div class="container">
 
 <h2>🌙 Kad Raya</h2>
+
 <p>Masukkan nama anda</p>
 
 <input type="text" id="name" placeholder="Nama anda">
-<br>
-<button onclick="showCard(); playSong()">Buka Kad Raya</button>
+
+<br><br>
+
+<button onclick="showCard()">Buka Kad Raya</button>
 
 <div class="card" id="card">
 
 <h1>Selamat Hari Raya</h1>
 
 <p>Maaf Zahir & Batin</p>
-
-<p>Ikhlas daripada Erma</p>
 
 <h2 id="username"></h2>
 
@@ -115,30 +171,23 @@ opacity:0;
 </div>
 
 <audio id="rayaSong" loop>
-  <source src="Siti_Nurhaliza_-_Sesuci_Lebaran_Official_Music_Video_256KBPS.webm" type="audio/webm">
+<source src="Siti_Nurhaliza_-_Sesuci_Lebaran_Official_Music_Video_256KBPS.webm" type="audio/webm">
 </audio>
 
 <script>
 
 function showCard(){
+
 let name=document.getElementById("name").value;
 
 document.getElementById("username").innerText=name;
+
 document.getElementById("card").style.display="block";
 
 document.getElementById("rayaSong").play();
+
 }
 
-</script>
-
-<audio id="rayaSong" loop>
-  <source src="Siti_Nurhaliza_-_Sesuci_Lebaran_Official_Music_Video_256KBPS.webm" type="audio/webm">
-</audio>
-
-<script>
-function playSong(){
-document.getElementById("rayaSong").play();
-}
 </script>
 
 </body>
